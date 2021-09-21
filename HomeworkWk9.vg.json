@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Cost of Houses in Victoria",
+    "width": 800,
+    "height": 600,
+    "data": {
+       
+
+}
+
+
+{
+    "lookup": "Suburb.NAME",
+    "from": {
+      "data": {
+        "url": "data/melb_data.csv"
+      },
+      "key": "Suburb",
+      "fields": ["Active"]
+    }
+}
+
+
+
