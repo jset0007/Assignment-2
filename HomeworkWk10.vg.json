@@ -1,0 +1,39 @@
+{
+
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Average Cost of Housing in Metropolitan Melbourne",
+  "width": 1000,
+  "height": 5000,
+  "layer": [
+    {
+      "data": {
+         "url": "https://raw.githubusercontent.com/jset0007/Assignment-2/main/melb_data.csv"
+              },
+              "params": [ 
+                  { "name": "Price", "value": 0, "bind": { "input": "range",
+                    "min": 0, "max": 2000000, "step": 100000, "name": "Budget Range: "
+                    }
+                  }
+                ],
+        
+
+                "mark": {"type": "bar"},
+                "encoding": {
+                  "x": {"aggregate": "mean", "field": "Price"},
+                  "y": {"field": "Suburb", "type": "nominal"},
+                
+                  "color": {
+                    
+                  },
+                  "tooltip": [
+                                {"field": "Suburb", "type":"nominal"},
+                                {"aggregate": "mean", "field": "Price", "format":".0f"}
+
+                  ]
+                }
+              }
+
+  
+  
+]
+}
