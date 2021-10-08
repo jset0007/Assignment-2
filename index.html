@@ -9,16 +9,43 @@
   
         <!-- CSS file -->
         <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-
+<!-- Pure.css-->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
     <body>
-        <h1>Homework Week 9: Cost of Houses in Melbourne</h1>
-        <div id="dot_map"></div>
+        <div class ="page">
+            <h1>Homework Week 10: Cost of Houses in Melbourne</h1>
 
+            <div class="pure-u-1">
+                <div id="dot_map">
+                </div>
+            </div>
+       
+
+            <div class="pure-u-2">
+                <div id="bar_chart">
+                </div>
+            </div>
+
+        </div>
+        
+        
+      
+        
+        </div>
+        
         <script type="text/javascript">
             var vg_1 = "HomeworkWk9.vg.json";
             vegaEmbed("#dot_map", vg_1).then(function(result) {
+
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    
+            }).catch(console.error);
+            
+            var vg_2 = "HomeworkWk10.vg.json";
+            vegaEmbed("#bar_chart", vg_2).then(function(result) {
 
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     

@@ -1,43 +1,44 @@
 {
 
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "data": {
-      "url": "https://raw.githubusercontent.com/jset0007/Assignment-2/main/melb_data.csv"},
-  "title": "Average Cost of Housing in Metropolitan Melbourne",
-  "width": 1000,
-  "height": 5000,
-
-      "params": [
-                  {
-                   "name": "Price_range",
-                   "value": 0,
-                   "bind": {
-                   "input":"range",
-                   "min": 500000,
-                   "max": 2200000,
-                   "step": 100000,
-                   "name": "Budget Range: "
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "data": {
+        "url": "https://raw.githubusercontent.com/jset0007/Assignment-2/main/melb_data.csv"},
+    "title": "Average Cost of Housing in Metropolitan Melbourne",
+    "width": 1000,
+    "height": 5000,
+  
+        "params": [
+                    {
+                     "name": "Price_range",
+                     "value": 0,
+                     "bind": {
+                     "input":"range",
+                     "min": 500000,
+                     "max": 2200000,
+                     "step": 100000,
+                     "name": "Budget Range: "
+                     }
                    }
-                 }
-              ],
-             "transform" : [
-               {"filter":"datum.Price < Price_range"}
-             ],
-       "mark": {"type": "bar"},
-       "encoding": {
-         
-          "x": {
-                "aggregate": "mean", 
-                "field": "Price"
-               },
-          "y": {
-                "field": "Suburb", 
-                "type": "nominal"
-              },
-          
-         "tooltip": [
-              {"field": "Suburb", "type":"nominal"},
-              {"aggregate": "mean", "field": "Price", "format":".0f"}
-                  ]
-                }
-          }
+                ],
+               "transform" : [
+                 {"filter":"datum.Price < Price_range"}
+               ],
+         "mark": {"type": "bar"},
+         "encoding": {
+           
+            "x": {
+                  "aggregate": "mean", 
+                  "field": "Price"
+                 },
+            "y": {
+                  "field": "Suburb", 
+                  "type": "nominal"
+                },
+            
+           "tooltip": [
+                {"field": "Suburb", "type":"nominal"},
+                {"aggregate": "mean", "field": "Price", "format":".0f"}
+                    ]
+                  }
+            }
+  
