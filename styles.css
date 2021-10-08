@@ -2,20 +2,22 @@ h1{
 	tex-align:center;
 }
 
-#dot_map {
+#pure-u-1 {
 	top:100px;
 	bottom: 100px; 
 	left: 100px;
 	right: 100px;
+	margin-left: 60px
 	/*height: 1000px;
 	width: 800px;*/
 }
 
-#bar_map {
+#pure-u-2 {
 	top:100px;
 	bottom: 100px; 
 	left: 100px;
 	right: 100px;
+ 	margin-left: 60px
 	/*height: 1000px;
 	width: 800px;*/
 }
