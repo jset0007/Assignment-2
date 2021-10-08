@@ -21,7 +21,7 @@
                  }
               ],
              "transform" : [
-               {"filter":"datum.Price > Price_range"}
+               {"filter":"datum.Price < Price_range"}
              ],
        "mark": {"type": "bar"},
        "encoding": {
