@@ -1,0 +1,125 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "title": "Land Size against Property Value",
+  "data": {
+    "url": "https://raw.githubusercontent.com/jset0007/Assignment-2/main/melb_data.csv"
+  },
+  "params": [
+    {
+      "name": "Regionname",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+         "South-Eastern Metropolitan",
+         "Northern Metropolitan",
+         "Eastern Metropolitan",
+         "Southern Metropolitan",
+         "Western Metropolitan",
+         "Northern Victoria",
+         "Eastern Victoria",
+         "Western Victoria"
+        ],
+        "labels": [
+          "Show All",
+          "South-Eastern Metropolitan",
+          "Northern Metropolitan",
+          "Eastern Metropolitan",
+          "Southern Metropolitan",
+          "Western Metropolitan",
+          "Northern Victoria",
+          "Eastern Victoria",
+          "Western Victoria"
+        ],
+        "name": "Region: "
+      }
+    }
+  ],
+  "transform": [
+       {
+      "filter": "Regionname == null || datum.Regionname == Regionname"
+       },
+       {"filter":"datum.Landsize>100"},
+      {"filter":"datum.Landsize<5000"}
+   
+  ],
+  "encoding": {
+    "x": {
+      "field": "Landsize",
+      "type": "quantitative",
+      "title": "Land Size (sqm)",
+      "axis": {"tickCount": 8},
+      "scale": {
+        "type":"log",
+        "domain":[100, 5000]
+      }
+    },
+    "y": {
+      "field": "Price",
+      "type": "quantitative",
+      "title": "Property Value ($)",
+      "axis": {"tickCount": 6},
+      "scale": {}
+    }
+  },
+  "layer": [
+    {
+      "mark": "circle",
+      "encoding": {
+        "size": {
+          "field": "Landsize",
+          "type": "quantitative",
+          "title":"Land Size",
+          "scale": {
+            "type": "threshold",
+            "domain": [100, 300 ,500 ,700 ,1000,2000,4000]
+          
+          },
+          "legend": {"format": ".1s"}
+        },
+        "color": {
+          "field": "Regionname",
+          "type": "nominal",
+          "title":"Region Name",
+          "scale": {
+            "domain": [
+              "South-Eastern Metropolitan",
+              "Northern Metropolitan",
+              "Eastern Metropolitan",
+              "Southern Metropolitan",
+              "Western Metropolitan",
+              "Northern Victoria",
+              "Eastern Victoria",
+              "Western Victoria"
+            ],
+            "range": [
+              "#e41a1c",
+              "#984ea3",
+              "#ff7f00",
+              "#a6cee3",
+              "#377eb8",
+              "#a65628",
+              "#e02dd8",
+              "#00ffe8"
+
+            ]
+          }
+        },
+        "opacity": {
+          "value": 0.6
+        },
+        "tooltip": [
+          {"field": "Address", "type": "nominal"},
+          {"field": "Suburb", "type": "nominal"},
+          {"field": "Landsize", "type": "quantitative", "format": ","},
+          {"field": "Bedroom(s)", "type": "quantitative", "format": ","},
+          {"field": "Bathroom(s)", "type": "quantitative", "format": ","},
+          {"field": "Car", "type": "quantitative", "format": ",","title":"Car Space(s)"},
+          {"field": "Price", "type": "quantitative", "format": ","}
+        ]
+      }
+    }
+  ]
+}
