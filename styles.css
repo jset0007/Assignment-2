@@ -1,25 +1,35 @@
+body{
+	background-color:#f1d6cb; 
+}
+.page{
+	background-color:#ffff; 
+	width: 1250px;
+	margin: auto;
+	padding: 50px;
+	padding-top: 25px;
+}
 h1{
-	tex-align:center;
+	text-align:center;
+	font-size: 80px;
+	
 }
 
-#pure-u-1 {
-	top:100px;
-	bottom: 100px; 
-	left: 100px;
-	right: 100px;
-	margin-left: auto;
-	margin-right:auto;
-	/*height: 1000px;
-	width: 800px;*/
+.pure-u-1 img{
+	height: 350px;
+	width:100vw;
+	text-rendering:auto;
+	 
 }
 
-#pure-u-2 {
-	top:100px;
-	bottom: 100px; 
-	left: 100px;
-	right: 100px;
-	margin-left: auto;
-	margin-right:auto;
-	/*height: 1000px;
-	width: 800px;*/
+
+.pure-u-1-2 {
+	text-align: center; 
+	display:inline-block;
+	letter-spacing:normal;
+	word-spacing:normal;
+	vertical-align:top;
+	text-rendering:auto;
+	
+
 }
+

@@ -8,44 +8,114 @@
    
   
         <!-- CSS file -->
-        <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+        <link rel="stylesheet" type="text/css" href="styles.css" media="all">
 <!-- Pure.css-->
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="layout.css">
     </head>
 
     <body>
-        <div class ="page">
-            <h1>Homework Week 10: Cost of Houses in Melbourne</h1>
-
+        <div class ="pure-g">
             <div class="pure-u-1">
-                <div id="dot_map">
-                </div>
-            </div>
+                <img src="headerimg3.jpg">
+             </div>
+        </div>
+<div class="page" >
        
-
-            <div class="pure-u-2">
-                <div id="bar_chart">
-                </div>
+        
+        <div class ="pure-g">
+            <div class="pure-u-1-2">
+                <br> 
+                <br> 
+                <br> 
+                <br>
+                    <h2>Real Estate Sector Growth</h2>
+                  <p>The property sector of Melbourne has been on the rise for the past decade with a 26% increase in median property value since 2010.
+                     Some of the key forces pushing the prices can be a result of an increase in popultaion, change in loan interest rates or changes in building regulations for more high-rise buildings.
+                    </p>  
+                 
             </div>
+            <div class="pure-u-1-2 ">
+                <div id="trend"></div>
+            </div>
+            
+        </div>
 
+        <div class ="pure-g">
+           
+            <div class="pure-u-1-2">
+                <div id="mean_melb"></div>
+            </div>
+            <div class="pure-u-1-2">
+                 
+                <br> 
+                <br> 
+                <br> 
+                <br> 
+                <br> 
+                <h2>Metropolitan Melbourne</h2>
+                
+              <p>Depending on your budget range, the areas in the metropolitan region can vary in price. 
+                 The price can be influenced by a number of factors such as proximity to recreational spaces,schools, heritage value and land size.
+                  The chart on the left shows the mean prices of each suburb in the metropolitan region between the years of 2016-2017. 
+                  As shown, the value of the property is not as dependent on the proximity to the CBD as other possible factors.
+                  Typically the closer you are to the city the greater the value of the property.
+                </p>  
+             
+        </div>
+            
+        </div>
+      
+
+        <div class ="pure-g">
+            <div class="pure-u-1-2">
+              
+                <br> 
+                <br> 
+                <br> 
+                <br> 
+                <br> 
+                <br> 
+                <br> 
+                <br> 
+                <br> 
+                <h2>Property Traits</h2>
+              <p>One of the main traits that home buyers look at in a property are the number of bedrooms,bathrooms, car spaces and the landsize
+                  Each of these traits affect the price of the property as, it provides a greater potential of value in the present or future. 
+                  The greater number of these traits result in a higher value for the property. A greater landsize allows for additional development such as subdividing the land,
+                  or building more townhouses to be rented out. Subdividing land is the result of dividing the inital land and selling that portion to the market. 
+
+              </p>  
+             
+        </div>
+            <div class="pure-u-1-2 ">
+                <div id="landsize"></div>
+            </div>
         </div>
         
-        
+    </div>
       
         
         </div>
         
         <script type="text/javascript">
-            var vg_1 = "HomeworkWk9.vg.json";
-            vegaEmbed("#dot_map", vg_1).then(function(result) {
+            var vg_1 = "trend.vg.json";
+            vegaEmbed("#trend", vg_1).then(function(result) {
 
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     
             }).catch(console.error);
             
-            var vg_2 = "HomeworkWk10.vg.json";
-            vegaEmbed("#bar_chart", vg_2).then(function(result) {
+            var vg_2 = "mean_melb.vg.json";
+            vegaEmbed("#mean_melb", vg_2).then(function(result) {
+
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    
+            }).catch(console.error);
+
+            var vg_3 = "landsize.vg.json";
+            vegaEmbed("#landsize", vg_3).then(function(result) {
 
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     

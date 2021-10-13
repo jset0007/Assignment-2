@@ -1,17 +1,17 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Mean property price per suburb (2016-2017)",
-  "width": "container",
-  "height": 500,
+  "width": 600,
+  "height": 400,
   "projection": {
     "type": "equirectangular",
-    "center":   [145, -37.95],
+    "center":   [	144.9449, -37.8424],
     "scale": {"expr": "zoom_level"}
   },
   "params": [
     {
       "name": "zoom_level",
-      "value": 30000,
+      "value": 40000,
       "bind": {
         "input": "range",
         "min": 18000,
@@ -23,13 +23,13 @@
 
     {
       "name": "Price_range",
-      "value": 0,
+      "value": 700000,
       "bind": {
       "input":"range",
       "min": 500000,
       "max": 5000000,
        "step": 100000,
-       "name": "Budget Range: "
+       "name": "What's your budget?: "
       }
     }
 
@@ -84,7 +84,7 @@
           "field": "Mean",
           "type": "quantitative",
           "scale": {"domain": [400000, 4500000], "scheme": "blues"},
-          "legend": {"format": ".2s"}
+          "legend": {"format": ".2s", "orient":"bottom"}
         },
         "tooltip": [
           {"field": "Suburb", "type": "nominal", "title": "Suburb"},
@@ -99,5 +99,5 @@
       }
     }
   ],
-  "config": {}
+  "config": {"title":{"fontSize":15}}
 }

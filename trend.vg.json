@@ -1,9 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {"url": "https://raw.githubusercontent.com/jset0007/Assignment-2/main/median_year.csv"},
-    "width": 400,
+    "title":"Median House Prices (2000-2020)",
+    "width": 500,
     "height": 300,
-    "encoding": {"x": {"field": "Sale Year", "type": "ordinal"}},
+    "encoding": {"x": {"field": "Sale Year", "type": "ordinal","title":"Year"}},
     "layer": [
       {
         "encoding": {
@@ -20,7 +21,7 @@
                  ]
                }
                },
-          "y": {"field": "Price", "type": "quantitative"}
+          "y": {"field": "Price", "type": "quantitative","title":"Median Price"}
         },
         "layer": [
           {"mark": "line"},
@@ -51,7 +52,63 @@
             "clear": "mouseout"
           }
         }]
+      },
+
+      {
+      "data": {
+         "values": [
+           {}
+           ]
+      },
+      "encoding": {
+        "x": {"datum": 2010},
+        "y": {"datum":740000 }
+      },
+      "layer": [{
+        "mark": "square"
+      }, {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "bottom",
+          "dx": -6,
+          "dy": -2,
+          "x": "width",
+          "text": "6% Increase in Melbourne population",
+          "fontStyle":"italic",
+          "fontSize":12.5
+        }
+      }]
+    },
+     {
+      "data": {
+         "values": [
+           {}
+           ]
+      },
+      "encoding": {
+        "x": {"datum": 2019},
+        "y": {"datum":901951 }
+      },
+      "layer": [
+          {
+        "mark": "square"
+      }, {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "bottom",
+          "dx": -6,
+          "dy": -2,
+          "x": "width",
+          "text": "Home loan rates halved since 2011",
+          "fontStyle":"italic",
+          "fontSize":12.5
+        }
       }
-    ]
+        ]
+      }
+    ],
+    "config": {"title":{"fontSize":15}}
   }
   

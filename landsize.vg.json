@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 600,
-  "title": "Land Size against Property Value",
+  "width": 550,
+  "height": 500,
+  "title": "Land Size against Property Value (2016-2017)",
   "data": {
     "url": "https://raw.githubusercontent.com/jset0007/Assignment-2/main/melb_data.csv"
   },
@@ -77,9 +77,10 @@
             "domain": [100, 300 ,500 ,700 ,1000,2000,4000]
           
           },
-          "legend": {"format": ".1s"}
+          "legend": {"format": ".1s","orient": "bottom"}
         },
         "color": {
+          "legend":{"orient": "top-left"},
           "field": "Regionname",
           "type": "nominal",
           "title":"Region Name",
@@ -113,13 +114,14 @@
         "tooltip": [
           {"field": "Address", "type": "nominal"},
           {"field": "Suburb", "type": "nominal"},
-          {"field": "Landsize", "type": "quantitative", "format": ","},
-          {"field": "Bedroom(s)", "type": "quantitative", "format": ","},
-          {"field": "Bathroom(s)", "type": "quantitative", "format": ","},
-          {"field": "Car", "type": "quantitative", "format": ",","title":"Car Space(s)"},
-          {"field": "Price", "type": "quantitative", "format": ","}
+          {"field": "Landsize", "type": "quantitative"},
+          {"field": "Bedroom", "type": "quantitative","title":"Bedroom(s)"},
+          {"field": "Bathroom", "type": "quantitative","title":"Bathroom(s)"},
+          {"field": "Car", "type": "quantitative","title":"Car Space(s)"},
+          {"field": "Price", "type": "quantitative"}
         ]
       }
     }
-  ]
+  ],
+  "config": {"title":{"fontSize":15}}
 }
