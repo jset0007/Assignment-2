@@ -84,7 +84,7 @@
           "field": "Mean",
           "type": "quantitative",
           "scale": {"domain": [400000, 4500000], "scheme": "blues"},
-          "legend": {"format": ".2s", "orient":"bottom"}
+          "legend": {"format": ".2s", "orient":"bottom","title":"Mean Price"}
         },
         "tooltip": [
           {"field": "Suburb", "type": "nominal", "title": "Suburb"},

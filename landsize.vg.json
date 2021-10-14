@@ -35,12 +35,67 @@
         ],
         "name": "Region: "
       }
+    },
+    {
+      "name": "Bedroom",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+         "1",
+         "2",
+         "3",
+         "4",
+         "5",
+         "6",
+         "7" 
+        ],
+        "labels": [
+          "Show All",
+          "1",
+         "2",
+         "3",
+         "4",
+         "5",
+         "6",
+         "7" 
+        ],
+        "name": "Bedroom(s): "
+      }
+    },
+    {
+      "name": "Bathroom",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+         "1",
+         "2",
+         "3",
+         "4",
+         "5",
+         "6",
+         "7" 
+        ],
+        "labels": [
+          "Show All",
+          "1",
+         "2",
+         "3",
+         "4",
+         "5",
+         "6",
+         "7" 
+        ],
+        "name": "Bathroom(s): "
+      }
     }
   ],
   "transform": [
        {
-      "filter": "Regionname == null || datum.Regionname == Regionname"
-       },
+      "filter": "Regionname == null || datum.Regionname == Regionname"},
+      {"filter": "Bedroom == null || datum.Bedroom == Bedroom"},
+      {"filter": "Bathroom == null || datum.Bathroom == Bathroom"},
        {"filter":"datum.Landsize>100"},
       {"filter":"datum.Landsize<5000"}
    

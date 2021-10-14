@@ -1,6 +1,7 @@
 body{
 	background-color:#f1d6cb; 
 }
+
 .page{
 	background-color:#ffff; 
 	width: 1250px;
@@ -8,10 +9,31 @@ body{
 	padding: 50px;
 	padding-top: 25px;
 }
-h1{
+h2{
 	text-align:center;
-	font-size: 80px;
+	font-weight: bold;
+	font-family:  'Open Sans', sans-serif;
+	font-size:25px;
 	
+}
+p{
+	font-family:  'Open Sans', sans-serif;
+	font-size: 15px;
+}
+
+
+
+li{
+	font-family:  'Open Sans', sans-serif;
+	font-size: 15px;
+}
+.focus{
+	color:red;
+	 
+	font-family:  'Open Sans', sans-serif;
+}
+.pure-u-1{
+	height: 350px;
 }
 
 .pure-u-1 img{
@@ -29,7 +51,8 @@ h1{
 	word-spacing:normal;
 	vertical-align:top;
 	text-rendering:auto;
-	
+	padding-top: 15px;
 
 }
 
+ 
