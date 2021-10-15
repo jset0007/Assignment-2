@@ -13,14 +13,14 @@
         "input": "select",
         "options": [
           null,
-         "South-Eastern Metropolitan",
-         "Northern Metropolitan",
-         "Eastern Metropolitan",
-         "Southern Metropolitan",
-         "Western Metropolitan",
-         "Northern Victoria",
-         "Eastern Victoria",
-         "Western Victoria"
+          "South-Eastern Metropolitan",
+          "Northern Metropolitan",
+          "Eastern Metropolitan",
+          "Southern Metropolitan",
+          "Western Metropolitan",
+          "Northern Victoria",
+          "Eastern Victoria",
+          "Western Victoria"
         ],
         "labels": [
           "Show All",
@@ -42,23 +42,23 @@
         "input": "select",
         "options": [
           null,
-         "1",
-         "2",
-         "3",
-         "4",
-         "5",
-         "6",
-         "7" 
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
         ],
         "labels": [
           "Show All",
           "1",
-         "2",
-         "3",
-         "4",
-         "5",
-         "6",
-         "7" 
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
         ],
         "name": "Bedroom(s): "
       }
@@ -69,53 +69,68 @@
         "input": "select",
         "options": [
           null,
-         "1",
-         "2",
-         "3",
-         "4",
-         "5",
-         "6",
-         "7" 
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
         ],
         "labels": [
           "Show All",
           "1",
-         "2",
-         "3",
-         "4",
-         "5",
-         "6",
-         "7" 
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
         ],
         "name": "Bathroom(s): "
       }
     }
   ],
   "transform": [
-       {
-      "filter": "Regionname == null || datum.Regionname == Regionname"},
-      {"filter": "Bedroom == null || datum.Bedroom == Bedroom"},
-      {"filter": "Bathroom == null || datum.Bathroom == Bathroom"},
-       {"filter":"datum.Landsize>100"},
-      {"filter":"datum.Landsize<5000"}
-   
+    {
+      "filter": "Regionname == null || datum.Regionname == Regionname"
+    },
+    {
+      "filter": "Bedroom == null || datum.Bedroom == Bedroom"
+    },
+    {
+      "filter": "Bathroom == null || datum.Bathroom == Bathroom"
+    },
+    {
+      "filter": "datum.Landsize>100"
+    },
+    {
+      "filter": "datum.Landsize<5000"
+    }
   ],
   "encoding": {
     "x": {
       "field": "Landsize",
       "type": "quantitative",
       "title": "Land Size (sqm)",
-      "axis": {"tickCount": 8},
+      "axis": {
+        "tickCount": 8
+      },
       "scale": {
-        "type":"log",
-        "domain":[100, 5000]
+        "type": "log",
+        "domain": [
+          100,
+          5000
+        ]
       }
     },
     "y": {
       "field": "Price",
       "type": "quantitative",
       "title": "Property Value ($)",
-      "axis": {"tickCount": 6},
+      "axis": {
+        "tickCount": 6
+      },
       "scale": {}
     }
   },
@@ -126,19 +141,31 @@
         "size": {
           "field": "Landsize",
           "type": "quantitative",
-          "title":"Land Size",
+          "title": "Land Size",
           "scale": {
             "type": "threshold",
-            "domain": [100, 300 ,500 ,700 ,1000,2000,4000]
-          
+            "domain": [
+              100,
+              300,
+              500,
+              700,
+              1000,
+              2000,
+              4000
+            ]
           },
-          "legend": {"format": ".1s","orient": "bottom"}
+          "legend": {
+            "format": ".1s",
+            "orient": "bottom"
+          }
         },
         "color": {
-          "legend":{"orient": "top-left"},
+          "legend": {
+            "orient": "top-left"
+          },
           "field": "Regionname",
           "type": "nominal",
-          "title":"Region Name",
+          "title": "Region Name",
           "scale": {
             "domain": [
               "South-Eastern Metropolitan",
@@ -154,12 +181,11 @@
               "#e41a1c",
               "#984ea3",
               "#ff7f00",
-              "#a6cee3",
+              "#339151",
               "#377eb8",
               "#a65628",
               "#e02dd8",
               "#00ffe8"
-
             ]
           }
         },
@@ -167,16 +193,44 @@
           "value": 0.6
         },
         "tooltip": [
-          {"field": "Address", "type": "nominal"},
-          {"field": "Suburb", "type": "nominal"},
-          {"field": "Landsize", "type": "quantitative"},
-          {"field": "Bedroom", "type": "quantitative","title":"Bedroom(s)"},
-          {"field": "Bathroom", "type": "quantitative","title":"Bathroom(s)"},
-          {"field": "Car", "type": "quantitative","title":"Car Space(s)"},
-          {"field": "Price", "type": "quantitative"}
+          {
+            "field": "Address",
+            "type": "nominal"
+          },
+          {
+            "field": "Suburb",
+            "type": "nominal"
+          },
+          {
+            "field": "Landsize",
+            "type": "quantitative"
+          },
+          {
+            "field": "Bedroom",
+            "type": "quantitative",
+            "title": "Bedroom(s)"
+          },
+          {
+            "field": "Bathroom",
+            "type": "quantitative",
+            "title": "Bathroom(s)"
+          },
+          {
+            "field": "Car",
+            "type": "quantitative",
+            "title": "Car Space(s)"
+          },
+          {
+            "field": "Price",
+            "type": "quantitative"
+          }
         ]
       }
     }
   ],
-  "config": {"title":{"fontSize":15}}
+  "config": {
+    "title": {
+      "fontSize": 15
+    }
+  }
 }

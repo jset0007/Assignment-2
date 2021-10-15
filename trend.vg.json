@@ -1,114 +1,180 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {"url": "https://raw.githubusercontent.com/jset0007/Assignment-2/main/median_year.csv"},
-    "title":"Median House Prices (2000-2020)",
-    "width": 500,
-    "height": 300,
-    "encoding": {"x": {"field": "Sale Year", "type": "ordinal","title":"Year"}},
-    "layer": [
-      {
-        "encoding": {
-          "color": {"field": "Type", "type": "nominal"
-          , 
-            "scale":{
-              "domain":[
-                "House",
-                "Apartment"
-              ],
-              "range":[
-                "#4ebcff",
-                "#945cb4"
-                 ]
-               }
-               },
-          "y": {"field": "Price", "type": "quantitative","title":"Median Price"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/jset0007/Assignment-2/main/median_year.csv"
+  },
+  "title": "Median House Prices (2000-2020)",
+  "width": 500,
+  "height": 400,
+  "encoding": {
+    "x": {
+      "field": "Sale Year",
+      "type": "ordinal",
+      "title": "Year"
+    }
+  },
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "Type",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "House",
+              "Apartment"
+            ],
+            "range": [
+              "#4ebcff",
+              "#945cb4"
+            ]
+          },
+          "legend":{}
         },
-        "layer": [
-          {"mark": "line"},
-          {"transform": [{"filter": {"param": "hover", "empty": false}}], "mark": "point"}
+        "y": {
+          "field": "Price",
+          "type": "quantitative",
+          "title": "Median Price"
+        }
+      },
+      "layer": [
+        {
+          "mark": "line"
+        },
+        {
+          "transform": [
+            {
+              "filter": {
+                "param": "hover",
+                "empty": false
+              }
+            }
+          ],
+          "mark": "point"
+        }
+      ]
+    },
+    {
+      "transform": [
+        {
+          "pivot": "Type",
+          "value": "Price",
+          "groupby": [
+            "Sale Year"
+          ]
+        }
+      ],
+      "mark": "rule",
+      "encoding": {
+        "opacity": {
+          "condition": {
+            "value": 0.3,
+            "param": "hover",
+            "empty": false
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {
+            "field": "Sale Year",
+            "type": "nominal",
+            "title": "Year"
+          },
+          {
+            "field": "House",
+            "type": "quantitative"
+          },
+          {
+            "field": "Apartment",
+            "type": "quantitative"
+          }
         ]
       },
-      {
-        "transform": [{"pivot": "Type", "value": "Price", "groupby": ["Sale Year"]}],
-        "mark": "rule",
-        "encoding": {
-          "opacity": {
-            "condition": {"value": 0.3, "param": "hover", "empty": false},
-            "value": 0
-          },
-          "tooltip": [
-            {"field":"Sale Year", "type":"nominal", "title":"Year"},
-            {"field":"House", "type":"quantitative"},
-            {"field":"Apartment", "type":"quantitative"}
-          ]
-        },
-        "params": [{
+      "params": [
+        {
           "name": "hover",
           "select": {
             "type": "point",
-            "fields": ["Sale Year"],
+            "fields": [
+              "Sale Year"
+            ],
             "nearest": true,
             "on": "mouseover",
             "clear": "mouseout"
           }
-        }]
-      },
-
-      {
-      "data": {
-         "values": [
-           {}
-           ]
-      },
-      "encoding": {
-        "x": {"datum": 2010},
-        "y": {"datum":740000 }
-      },
-      "layer": [{
-        "mark": "square"
-      }, {
-        "mark": {
-          "type": "text",
-          "align": "right",
-          "baseline": "bottom",
-          "dx": -6,
-          "dy": -2,
-          "x": "width",
-          "text": "6% Increase in Melbourne population",
-          "fontStyle":"italic",
-          "fontSize":12.5
         }
-      }]
+      ]
     },
-     {
+    {
       "data": {
-         "values": [
-           {}
-           ]
+        "values": [
+          {}
+        ]
       },
       "encoding": {
-        "x": {"datum": 2019},
-        "y": {"datum":901951 }
+        "x": {
+          "datum": 2010
+        },
+        "y": {
+          "datum": 740000
+        }
       },
       "layer": [
-          {
-        "mark": "square"
-      }, {
-        "mark": {
-          "type": "text",
-          "align": "right",
-          "baseline": "bottom",
-          "dx": -6,
-          "dy": -2,
-          "x": "width",
-          "text": "Home loan rates halved since 2011",
-          "fontStyle":"italic",
-          "fontSize":12.5
+        {
+          "mark": "square"
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "bottom",
+            "dx": -6,
+            "dy": -2,
+            "x": "width",
+            "text": "6% Increase in Melbourne population",
+            "fontStyle": "italic",
+            "fontSize": 12.5
+          }
         }
-      }
+      ]
+    },
+    {
+      "data": {
+        "values": [
+          {}
         ]
-      }
-    ],
-    "config": {"title":{"fontSize":15}}
+      },
+      "encoding": {
+        "x": {
+          "datum": 2019
+        },
+        "y": {
+          "datum": 901951
+        }
+      },
+      "layer": [
+        {
+          "mark": "square"
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "bottom",
+            "dx": -6,
+            "dy": -2,
+            "x": "width",
+            "text": "Home loan rates halved since 2011",
+            "fontStyle": "italic",
+            "fontSize": 12.5
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "title": {
+      "fontSize": 15
+    }
   }
-  
+}

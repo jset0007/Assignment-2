@@ -5,8 +5,13 @@
   "height": 400,
   "projection": {
     "type": "equirectangular",
-    "center":   [	144.9449, -37.8424],
-    "scale": {"expr": "zoom_level"}
+    "center": [
+      144.9449,
+      -37.8424
+    ],
+    "scale": {
+      "expr": "zoom_level"
+    }
   },
   "params": [
     {
@@ -20,32 +25,32 @@
         "name": "Zoom: "
       }
     },
-
     {
       "name": "Price_range",
       "value": 700000,
       "bind": {
-      "input":"range",
-      "min": 500000,
-      "max": 5000000,
-       "step": 100000,
-       "name": "What's your budget?: "
+        "input": "range",
+        "min": 500000,
+        "max": 5000000,
+        "step": 100000,
+        "name": "What's your budget?: "
       }
     }
-
   ],
   "layer": [
     {
       "data": {
         "url": "https://raw.githubusercontent.com/jset0007/Assignment-2/main/vic_localities.json",
-        "format": {"type": "topojson", "feature": "vic_localities"}
+        "format": {
+          "type": "topojson",
+          "feature": "vic_localities"
+        }
       },
       "transform": [
         {
           "calculate": "'Data is not available in ' + datum.properties.LOC_NAME",
           "as": "note"
         }
-        
       ],
       "mark": {
         "type": "geoshape",
@@ -53,7 +58,11 @@
         "stroke": "white",
         "strokeWidth": 1
       },
-      "encoding": {"tooltip": {"field": "note"}}
+      "encoding": {
+        "tooltip": {
+          "field": "note"
+        }
+      }
     },
     {
       "data": {
@@ -74,30 +83,55 @@
           },
           "as": "geo"
         },
-        {"filter":"datum.Mean < Price_range"}
-      
+        {
+          "filter": "datum.Mean < Price_range"
+        }
       ],
-      "mark": {"type": "geoshape", "stroke": "#fff", "strokeWidth": 0.5},
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#000000",
+        "strokeWidth": 0.5
+      },
       "encoding": {
-        "shape": {"field": "geo", "type": "geojson"},
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
         "color": {
           "field": "Mean",
           "type": "quantitative",
-          "scale": {"domain": [400000, 4500000], "scheme": "blues"},
-          "legend": {"format": ".2s", "orient":"bottom","title":"Mean Price"}
+          "scale": {
+            "domain": [
+              400000,
+              4500000
+            ],
+            "scheme": "blues"
+          },
+          "legend": {
+            "format": ".2s",
+            "orient": "bottom",
+            "title": "Mean Price"
+          }
         },
         "tooltip": [
-          {"field": "Suburb", "type": "nominal", "title": "Suburb"},
+          {
+            "field": "Suburb",
+            "type": "nominal",
+            "title": "Suburb"
+          },
           {
             "field": "Mean",
             "type": "quantitative",
             "title": "Mean Price",
             "format": ".0f"
           }
-         
         ]
       }
     }
   ],
-  "config": {"title":{"fontSize":15}}
+  "config": {
+    "title": {
+      "fontSize": 15
+    }
+  }
 }
